@@ -8,7 +8,8 @@ jobs:
       - uses: xu-cheng/latex-action@v2
         with:
           root_file: whitepaper.tex
-      - uses: actions/upload-artifact@v3
+          extra_packages: tikz amsmath
+      - uses: actions/upload-artifact@v3.1.3
         with:
           name: whitepaper
           path: whitepaper.pdf
