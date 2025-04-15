@@ -8,8 +8,10 @@ jobs:
       - uses: xu-cheng/latex-action@v2
         with:
           root_file: whitepaper.tex
-          extra_packages: tikz amsmath
-      - uses: actions/upload-artifact@v3.1.3
+          extra_packages: tikz amsmath hyperref enumitem titlesec graphicx
+      - name: Verify PDF Output
+        run: ls -l whitepaper.pdf || echo "PDF not found"
+      - uses: actions/upload-artifact@v4
         with:
           name: whitepaper
           path: whitepaper.pdf
